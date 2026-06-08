@@ -44,16 +44,16 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 withCredentials([
-                    string(credentialsId: 'kubeconfig',
-                    variable: 'KUBECONFIG')
+                    string(credentialsId: 'kubeconfig', variable: 'KUBE_CONFIG_CONTENT')
                 ]) {
+                     sh '''
+                     echo "$KUBE_CONFIG_CONTENT" > kubeconfig.yaml
+                     export KUBECONFIG=$PWD/kubeconfig.yaml
 
-                    sh '''
-                    sed -i "s|IMAGE_PLACEHOLDER|$IMAGE_NAME:$IMAGE_TAG|g" deployment.yaml
-
-                    kubectl apply -f deployment.yaml
+                     kubectl get nodes
+                     kubectl apply -f deployment.yaml
                     '''
-                }
+              }
             }
         }
     }
