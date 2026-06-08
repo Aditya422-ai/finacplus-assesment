@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "adityakulkarni548/sample-app"
+        IMAGE_NAME = "adityakul548/sample-app"
         IMAGE_TAG = "${BUILD_NUMBER}"
     }
 
