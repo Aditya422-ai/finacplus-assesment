@@ -41,21 +41,20 @@ pipeline {
             }
         }
 
-        stage('Deploy to Kubernetes') {
-            steps {
-                withCredentials([
-                    string(credentialsId: 'kubeconfig', variable: 'KUBE_CONFIG_CONTENT')
-                ]) {
-                     sh '''
-                     echo "$KUBE_CONFIG_CONTENT" > kubeconfig.yaml
-                     export KUBECONFIG=$PWD/kubeconfig.yaml
+        stage('Debug Kubeconfig') {
+    steps {
+        withCredentials([
+            string(credentialsId: 'kubeconfig', variable: 'KUBE_CONFIG_CONTENT')
+        ]) {
+            sh '''
+            echo "$KUBE_CONFIG_CONTENT" > kubeconfig.yaml
 
-                     kubectl get nodes
-                     kubectl apply -f deployment.yaml
-                    '''
-              }
-            }
+            echo "===== FIRST 20 LINES ====="
+            head -20 kubeconfig.yaml
+            '''
         }
+    }
+}
     }
 
     post {
