@@ -54,8 +54,20 @@ pipeline {
             '''
         }
     }
-}
+}   
+       stage('Deploy') {
+    steps {
+        sh '''
+        sed -i "s|IMAGE_PLACEHOLDER|adityakul548/sample-app:${BUILD_NUMBER}|g" deployment.yaml
+
+        kubectl apply -f deployment.yaml
+
+        kubectl get pods
+        kubectl get svc
+        '''
+       }
     }
+}
 
     post {
 
