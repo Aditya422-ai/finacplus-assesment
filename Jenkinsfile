@@ -44,7 +44,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 withCredentials([
-                    file(credentialsId: 'kubeconfig',
+                    string(credentialsId: 'kubeconfig',
                     variable: 'KUBECONFIG')
                 ]) {
 
