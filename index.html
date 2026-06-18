@@ -3,159 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CI/CD Pipeline Demo</title>
-
+    <title>Aditya Kulkarni | DevOps Engineer</title>
     <style>
         *{
             margin:0;
             padding:0;
             box-sizing:border-box;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         body{
-            background: linear-gradient(135deg,#0f172a,#1e293b);
+            background:#f4f6f9;
+            color:#333;
+            line-height:1.6;
+        }
+
+        header{
+            background:linear-gradient(135deg,#0077b6,#023e8a);
             color:white;
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-        }
-
-        .container{
             text-align:center;
-            padding:40px;
-            max-width:900px;
+            padding:60px 20px;
         }
 
-        .badge{
-            display:inline-block;
-            background:#22c55e;
-            color:#fff;
-            padding:10px 20px;
-            border-radius:30px;
-            margin-bottom:20px;
-            font-weight:bold;
-            box-shadow:0 0 15px rgba(34,197,94,0.5);
-        }
-
-        h1{
+        header h1{
             font-size:3rem;
-            margin-bottom:20px;
-            color:#38bdf8;
         }
 
-        p{
+        header p{
+            margin-top:10px;
             font-size:1.2rem;
-            color:#cbd5e1;
-            margin-bottom:40px;
         }
 
-        .pipeline{
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            flex-wrap:wrap;
-            gap:15px;
+        nav{
+            background:#222;
+            padding:15px;
+            text-align:center;
         }
 
-        .step{
-            background:#1e293b;
-            padding:20px;
-            width:140px;
-            border-radius:12px;
-            border:1px solid #334155;
-            transition:0.3s;
-        }
-
-        .step:hover{
-            transform:translateY(-8px);
-            box-shadow:0 0 20px rgba(56,189,248,0.4);
-        }
-
-        .icon{
-            font-size:2rem;
-            margin-bottom:10px;
-        }
-
-        .arrow{
-            font-size:2rem;
-            color:#38bdf8;
-        }
-
-        .footer{
-            margin-top:50px;
-            color:#94a3b8;
-            font-size:1rem;
-        }
-
-        .success{
-            margin-top:25px;
-            color:#22c55e;
-            font-size:1.3rem;
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 15px;
             font-weight:bold;
+        }
+
+        section{
+            max-width:1100px;
+            margin:auto;
+            padding:50px 20px;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom:20px;
+        }
+
+        h2{
+            color:#023e8a;
+            margin-bottom:15px;
+        }
+
+        .skills span{
+            display:inline-block;
+            background:#0077b6;
+            color:white;
+            padding:8px 15px;
+            margin:5px;
+            border-radius:20px;
+        }
+
+        .project{
+            margin-bottom:20px;
+        }
+
+        .project h3{
+            color:#0077b6;
+        }
+
+        .contact a{
+            text-decoration:none;
+            color:#0077b6;
+        }
+
+        footer{
+            background:#023e8a;
+            color:white;
+            text-align:center;
+            padding:20px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<header>
+    <h1>Aditya Kulkarni</h1>
+    <p>DevOps Engineer | AWS | Azure | Docker | Kubernetes | Jenkins</p>
+</header>
 
-    <div class="badge">
-        🚀 Deployment Successful
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <div class="card">
+        <h2>About Me</h2>
+        <p>
+            Hello! I am Aditya Kulkarni, a passionate DevOps Engineer with experience
+            in CI/CD, Cloud Computing, Containerization, and Infrastructure Automation.
+            I enjoy building scalable and reliable systems using modern DevOps tools and practices.
+        </p>
     </div>
+</section>
 
-    <h1>CI/CD Pipeline Demo</h1>
+<section id="skills">
+    <div class="card">
+        <h2>Technical Skills</h2>
+        <div class="skills">
+            <span>AWS</span>
+            <span>Azure</span>
+            <span>Docker</span>
+            <span>Kubernetes</span>
+            <span>Jenkins</span>
+            <span>Ansible</span>
+            <span>Terraform</span>
+            <span>Git</span>
+            <span>Linux</span>
+            <span>Maven</span>
+            <span>Python</span>
+            <span>Shell Scripting</span>
+        </div>
+    </div>
+</section>
 
-    <p>
-        Automated deployment using GitHub, Jenkins, Docker & Kubernetes
-    </p>
+<section id="projects">
+    <div class="card">
+        <h2>Projects</h2>
 
-    <div class="pipeline">
-
-        <div class="step">
-            <div class="icon">📂</div>
-            <h3>GitHub</h3>
+        <div class="project">
+            <h3>CI/CD Pipeline for Banking Application</h3>
+            <p>
+                Built an automated CI/CD pipeline using Git, Jenkins, Maven,
+                Docker, and Kubernetes for seamless application deployment.
+            </p>
         </div>
 
-        <div class="arrow">➜</div>
-
-        <div class="step">
-            <div class="icon">⚙️</div>
-            <h3>Jenkins</h3>
+        <div class="project">
+            <h3>Kubernetes Application Deployment</h3>
+            <p>
+                Deployed containerized applications on Kubernetes clusters with
+                rolling updates, scaling, and high availability.
+            </p>
         </div>
 
-        <div class="arrow">➜</div>
-
-        <div class="step">
-            <div class="icon">🐳</div>
-            <h3>Docker</h3>
-        </div>
-
-        <div class="arrow">➜</div>
-
-        <div class="step">
-            <div class="icon">☸️</div>
-            <h3>Kubernetes</h3>
+        <div class="project">
+            <h3>AI Model Deployment on Cloud</h3>
+            <p>
+                Deployed machine learning models on cloud infrastructure with
+                REST API integration and automated deployment pipelines.
+            </p>
         </div>
 
     </div>
+</section>
 
-    <div class="success">
-        ✅ Application Deployed Successfully via Poll SCM Trigger
+<section id="contact">
+    <div class="card contact">
+        <h2>Contact</h2>
+        <p>Email: adityakulkarni@example.com</p>
+        <p>GitHub:
+            <a href="https://github.com/Aditya422-ai" target="_blank">
+                github.com/Aditya422-ai
+            </a>
+        </p>
+        <p>LinkedIn:
+            <a href="https://www.linkedin.com/in/aditya-kulkarni422" target="_blank">
+                linkedin.com/in/aditya-kulkarni422
+            </a>
+        </p>
+        <p>Location: Pune, Maharashtra, India</p>
     </div>
+</section>
 
-    <div class="footer">
-        Build Number: <span id="build"></span><br>
-        Developed by Aditya Kulkarni
-    </div>
-
-</div>
-
-<script>
-    document.getElementById("build").innerHTML =
-    "Build #" + Math.floor(Math.random()*1000);
-</script>
+<footer>
+    <p>© 2026 Aditya Kulkarni | DevOps Portfolio</p>
+</footer>
 
 </body>
 </html>
