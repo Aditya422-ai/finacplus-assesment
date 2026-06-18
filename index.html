@@ -1,171 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya Kulkarni | DevOps Engineer</title>
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya Kulkarni | DevOps Engineer</title>
 
-        body{
-            background:#f4f6f9;
-            color:#333;
-            line-height:1.6;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        header{
-            background:linear-gradient(135deg,#0077b6,#023e8a);
-            color:white;
-            text-align:center;
-            padding:60px 20px;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-        header h1{
-            font-size:3rem;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        header p{
-            margin-top:10px;
-            font-size:1.2rem;
-        }
+body{
+    background:#0a0f1f;
+    color:white;
+    overflow-x:hidden;
+}
 
-        nav{
-            background:#222;
-            padding:15px;
-            text-align:center;
-        }
+/* Animated Background */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(0,255,255,0.15), transparent 25%),
+    radial-gradient(circle at 80% 30%, rgba(128,0,255,0.15), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(0,150,255,0.15), transparent 25%);
+    z-index:-1;
+}
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin:0 15px;
-            font-weight:bold;
-        }
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    z-index:100;
+}
 
-        section{
-            max-width:1100px;
-            margin:auto;
-            padding:50px 20px;
-        }
+.logo{
+    font-size:1.6rem;
+    font-weight:700;
+    color:#00e5ff;
+}
 
-        .card{
-            background:white;
-            padding:25px;
-            border-radius:10px;
-            box-shadow:0 3px 10px rgba(0,0,0,0.1);
-            margin-bottom:20px;
-        }
+nav ul{
+    display:flex;
+    list-style:none;
+}
 
-        h2{
-            color:#023e8a;
-            margin-bottom:15px;
-        }
+nav ul li{
+    margin-left:25px;
+}
 
-        .skills span{
-            display:inline-block;
-            background:#0077b6;
-            color:white;
-            padding:8px 15px;
-            margin:5px;
-            border-radius:20px;
-        }
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
 
-        .project{
-            margin-bottom:20px;
-        }
+nav ul li a:hover{
+    color:#00e5ff;
+}
 
-        .project h3{
-            color:#0077b6;
-        }
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:0 10%;
+}
 
-        .contact a{
-            text-decoration:none;
-            color:#0077b6;
-        }
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
 
-        footer{
-            background:#023e8a;
-            color:white;
-            text-align:center;
-            padding:20px;
-        }
-    </style>
+.hero-content h1 span{
+    color:#00e5ff;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    color:#c9d1d9;
+    max-width:700px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 35px;
+    background:linear-gradient(135deg,#00e5ff,#0077ff);
+    border-radius:50px;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,229,255,.4);
+}
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+    color:#00e5ff;
+}
+
+.glass{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+    padding:30px;
+}
+
+.about{
+    text-align:center;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.skill{
+    text-align:center;
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    transition:.4s;
+}
+
+.skill:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 20px rgba(0,229,255,.2);
+}
+
+.skill h3{
+    color:#00e5ff;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    padding:25px;
+    transition:.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 25px rgba(0,229,255,.15);
+}
+
+.project-card h3{
+    color:#00e5ff;
+    margin-bottom:10px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact a{
+    color:#00e5ff;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:rgba(255,255,255,0.05);
+    margin-top:50px;
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Aditya Kulkarni</h1>
-    <p>DevOps Engineer | AWS | Azure | Docker | Kubernetes | Jenkins</p>
-</header>
-
 <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <div class="logo">AK</div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 
-<section id="about">
-    <div class="card">
-        <h2>About Me</h2>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Hi, I'm <span>Aditya Kulkarni</span></h1>
         <p>
-            Hello! I am Aditya Kulkarni, a passionate DevOps Engineer with experience
-            in CI/CD, Cloud Computing, Containerization, and Infrastructure Automation.
-            I enjoy building scalable and reliable systems using modern DevOps tools and practices.
+            DevOps Engineer passionate about Cloud, Automation, CI/CD,
+            Kubernetes, Docker, Terraform and Infrastructure as Code.
+            Building scalable, secure and reliable cloud-native solutions.
+        </p>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="glass about">
+        <p>
+            BE Graduate (2025) with hands-on experience in DevOps practices,
+            cloud platforms and container orchestration. Skilled in building
+            CI/CD pipelines using Jenkins, Docker and Kubernetes. Passionate
+            about automation, cloud computing and modern software delivery.
         </p>
     </div>
 </section>
 
 <section id="skills">
-    <div class="card">
-        <h2>Technical Skills</h2>
-        <div class="skills">
-            <span>AWS</span>
-            <span>Azure</span>
-            <span>Docker</span>
-            <span>Kubernetes</span>
-            <span>Jenkins</span>
-            <span>Ansible</span>
-            <span>Terraform</span>
-            <span>Git</span>
-            <span>Linux</span>
-            <span>Maven</span>
-            <span>Python</span>
-            <span>Shell Scripting</span>
-        </div>
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-grid">
+        <div class="skill"><h3>AWS</h3></div>
+        <div class="skill"><h3>Azure</h3></div>
+        <div class="skill"><h3>Docker</h3></div>
+        <div class="skill"><h3>Kubernetes</h3></div>
+        <div class="skill"><h3>Jenkins</h3></div>
+        <div class="skill"><h3>Terraform</h3></div>
+        <div class="skill"><h3>Ansible</h3></div>
+        <div class="skill"><h3>Linux</h3></div>
+        <div class="skill"><h3>Git/GitHub</h3></div>
+        <div class="skill"><h3>Maven</h3></div>
+        <div class="skill"><h3>Python</h3></div>
+        <div class="skill"><h3>CI/CD</h3></div>
     </div>
 </section>
 
 <section id="projects">
-    <div class="card">
-        <h2>Projects</h2>
+    <h2 class="section-title">Featured Projects</h2>
 
-        <div class="project">
-            <h3>CI/CD Pipeline for Banking Application</h3>
+    <div class="projects">
+
+        <div class="project-card">
+            <h3>🚀 CI/CD Banking Application</h3>
             <p>
-                Built an automated CI/CD pipeline using Git, Jenkins, Maven,
-                Docker, and Kubernetes for seamless application deployment.
+                Automated application deployment using Git, Jenkins,
+                Maven, Docker and Kubernetes with rolling updates.
             </p>
         </div>
 
-        <div class="project">
-            <h3>Kubernetes Application Deployment</h3>
+        <div class="project-card">
+            <h3>☸ Kubernetes Deployment</h3>
             <p>
-                Deployed containerized applications on Kubernetes clusters with
-                rolling updates, scaling, and high availability.
+                Managed scalable deployments, services, NodePort exposure,
+                auto-healing and container orchestration.
             </p>
         </div>
 
-        <div class="project">
-            <h3>AI Model Deployment on Cloud</h3>
+        <div class="project-card">
+            <h3>☁ Cloud-Based AI Deployment</h3>
             <p>
-                Deployed machine learning models on cloud infrastructure with
-                REST API integration and automated deployment pipelines.
+                Deployed AI models on cloud infrastructure with REST APIs,
+                monitoring and automated deployment pipelines.
             </p>
         </div>
 
@@ -173,25 +293,31 @@
 </section>
 
 <section id="contact">
-    <div class="card contact">
-        <h2>Contact</h2>
-        <p>Email: adityakulkarni@example.com</p>
-        <p>GitHub:
-            <a href="https://github.com/Aditya422-ai" target="_blank">
+    <h2 class="section-title">Let's Connect</h2>
+
+    <div class="glass contact">
+        <h3>Aditya Kulkarni</h3>
+        <p>Pune, Maharashtra, India</p>
+        <br>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/Aditya422-ai">
                 github.com/Aditya422-ai
             </a>
         </p>
-        <p>LinkedIn:
-            <a href="https://www.linkedin.com/in/aditya-kulkarni422" target="_blank">
+
+        <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/aditya-kulkarni422">
                 linkedin.com/in/aditya-kulkarni422
             </a>
         </p>
-        <p>Location: Pune, Maharashtra, India</p>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Aditya Kulkarni | DevOps Portfolio</p>
+    <p>© 2026 Aditya Kulkarni | DevOps Engineer Portfolio</p>
 </footer>
 
 </body>
